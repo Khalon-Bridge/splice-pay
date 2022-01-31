@@ -1,12 +1,8 @@
 import { chakra, GridItem, HStack, SimpleGrid, VStack } from '@chakra-ui/react'
 import FormControl from 'src/components/FormControl/FormControl'
-import {
-  TextField as _TextField,
-  SelectField as _SelectField,
-  EmailField as _EmailField,
-  TelField as _TelField,
-  Submit as _Submit,
-} from '@redwoodjs/forms'
+
+import TextField from 'src/components/TextInputField'
+import SelectField from 'src/components/SelectInputField'
 
 import { range } from 'lodash'
 import {
@@ -22,18 +18,15 @@ import RadioGroup from '../RadioGroup/RadioGroup'
 import RadioCard from '../RadioCard/RadioCard'
 import StepsActionButtons from '../StepsActionButtons/StepsActionButtons'
 
-const TextField = chakra(_TextField)
-const SelectField = chakra(_SelectField)
-
 const BusinessFormStep2 = (props) => {
   return (
-    <VStack align={'start'} spacing={10}>
+    <VStack w="full" align={'start'} spacing={10}>
       <PageSection
         description={STORE_SETTINGS_TEXT}
         name={STORE_SETTINGS_TITLE}
       >
-        <HStack>
-          <FormControl label="Invoice currency" name="invoiceCurrency">
+        <HStack w="full" justify="space-between" spacing={4}>
+          <FormControl label="Invoice currency" name="settings.invoiceCurrency">
             {(props) => (
               <SelectField {...props}>
                 <option>USDT</option>
@@ -43,10 +36,11 @@ const BusinessFormStep2 = (props) => {
           </FormControl>
           <FormControl
             label="Invoice wallet address"
-            name="invoiceWalletAddress"
+            name="settings.invoiceWalletAddress"
           >
             {(props) => (
               <TextField
+                validation={{ required: true }}
                 placeholder="Blockchain wallet address for recieving invoice payments"
                 {...props}
               />
@@ -59,21 +53,24 @@ const BusinessFormStep2 = (props) => {
         name={INVESTMENT_SETTINGS_TEXT}
         description={INVESTMENT_SETTINGS_TITLE}
       >
-        <SimpleGrid columns={2}>
+        <SimpleGrid w="full" gap={4} columns={2}>
           <FormControl
             label="Investment returns wallet address"
-            name="investmenteWalletAddress"
+            name="settings.investmenteWalletAddress"
+            description="Blockchain wallet address for recieving returns on investment"
           >
             {(props) => (
               <TextField
-                placeholder="Blockchain wallet address for recieving returns on investment"
+                validation={{ required: true }}
+                placeholder="Blockchain wallet address"
                 {...props}
               />
             )}
           </FormControl>
           <FormControl
-            label="what (%) of your business earnings are you willing to invest?"
-            name="investmentPercent"
+            label="Investment Size"
+            description="what (%) of your business earnings are you willing to invest?"
+            name="settings.investmentPercent"
           >
             {(props) => (
               <SelectField {...props}>
@@ -83,7 +80,10 @@ const BusinessFormStep2 = (props) => {
               </SelectField>
             )}
           </FormControl>
-          <FormControl label="Investment returns currency" name="roiCurrency">
+          <FormControl
+            label="Investment returns currency"
+            name="settings.roiCurrency"
+          >
             {(props) => (
               <SelectField placeholder="AVAX,USDT" {...props}>
                 <option>USDT</option>
@@ -92,7 +92,11 @@ const BusinessFormStep2 = (props) => {
             )}
           </FormControl>
         </SimpleGrid>
-        <FormControl label="Investment strategy" name="strategy">
+        <FormControl
+          label="Investment strategy"
+          description="Choose how you want to grow your investment funds"
+          name="settings.strategy"
+        >
           {(props) => (
             <CustomControl {...props}>
               {({ field }) => (
@@ -104,7 +108,7 @@ const BusinessFormStep2 = (props) => {
                   {...field}
                 >
                   {(options) => (
-                    <GridItem>
+                    <GridItem key={options.key}>
                       <RadioCard {...options} />
                     </GridItem>
                   )}

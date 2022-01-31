@@ -4,6 +4,7 @@ import {
   useController,
   UseControllerReturn,
 } from '@redwoodjs/forms'
+import { Fragment } from 'react'
 
 interface CustomControlProps extends UseControllerProps {
   children?: (payload: UseControllerReturn) => React.ReactNode
@@ -11,7 +12,7 @@ interface CustomControlProps extends UseControllerProps {
 
 const CustomControl = ({ children, ...rest }: CustomControlProps) => {
   const controlProps = useController({ ...rest })
-  return <Box>{children(controlProps)}</Box>
+  return <Fragment>{children(controlProps)}</Fragment>
 }
 
 export default CustomControl

@@ -21,8 +21,15 @@ const CreateBusinessForm = () => {
     initialStep: 0,
   })
   return (
-    <Container>
-      <Steps activeStep={props.activeStep}>
+    <Container
+      borderRadius={'lg'}
+      maxW={'container.lg'}
+      py={10}
+      px={20}
+      bgColor={'white'}
+      w="container.xl"
+    >
+      <Steps colorScheme={'yellow'} w="lg" mb={4} activeStep={props.activeStep}>
         {steps &&
           steps.map(({ name, content }) => (
             <Step key={name} label={name}>

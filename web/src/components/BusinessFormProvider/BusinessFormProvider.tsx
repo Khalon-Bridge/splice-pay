@@ -17,7 +17,6 @@ const BusinessFormProvider = (props: BusinessFormProviderProps) => {
   const { children, nextStep, activeStep, stepCount } = props
   const onSubmit = (data) => {
     if (activeStep == stepCount) {
-      console.log(data)
     } else {
       nextStep && nextStep()
     }
