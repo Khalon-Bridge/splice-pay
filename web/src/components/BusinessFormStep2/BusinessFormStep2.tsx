@@ -1,4 +1,4 @@
-import { chakra, GridItem, HStack, SimpleGrid, VStack } from '@chakra-ui/react'
+import { GridItem, HStack, SimpleGrid, VStack } from '@chakra-ui/react'
 import FormControl from 'src/components/FormControl/FormControl'
 
 import TextField from 'src/components/TextInputField'

@@ -1,7 +1,5 @@
 import create from 'zustand'
 import { produce } from 'immer'
-import { merge, pick } from 'lodash'
-import { Input } from '@chakra-ui/react'
 
 type formInput = {
   name?: string

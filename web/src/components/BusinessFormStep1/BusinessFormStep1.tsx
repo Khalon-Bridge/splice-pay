@@ -60,7 +60,7 @@ const BusinessFormStep1 = () => {
           </FormControl>
           <FormControl label="Business location" name="information.address">
             {(props) => (
-              <TextField  placeholder="your business address" {...props} />
+              <TextField placeholder="your business address" {...props} />
             )}
           </FormControl>
           <FormControl label="Phone number" name="information.phone">
