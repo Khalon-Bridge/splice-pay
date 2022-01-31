@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing/web'
 
-import Container from './Container'
+import BusinessListPage from './BusinessListPage'
 
-describe('Container', () => {
+describe('BusinessListPage', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Container />)
+      render(<BusinessListPage />)
     }).not.toThrow()
   })
 })

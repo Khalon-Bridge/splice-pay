@@ -1,7 +1,7 @@
 import BaseLayout from './BaseLayout'
 
 export const generated = () => {
-  return <BaseLayout title="BaseLayout" />
+  return <BaseLayout />
 }
 
 export default { title: 'Layouts/BaseLayout' }

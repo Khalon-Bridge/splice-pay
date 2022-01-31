@@ -5,6 +5,6 @@ export default {
   primary: '#F29339',
   success: '#276749',
   accent: '#FFD66B',
-  background: '#F7F7F8',
+  background: '#E5E5E5',
   paragraph: '#291C02',
 }

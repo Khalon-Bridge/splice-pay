@@ -1,7 +1,7 @@
 import SideBarLayout from './SideBarLayout'
 
 export const generated = () => {
-  return <SideBarLayout title="SidebarLayout" />
+  return <SideBarLayout />
 }
 
 export default { title: 'Layouts/SideBarLayout' }

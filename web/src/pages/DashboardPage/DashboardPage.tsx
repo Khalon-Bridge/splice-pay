@@ -1,7 +1,6 @@
-import SideBarLayout from 'src/layouts/SideBarLayout/SideBarLayout'
-
+import PageContent from 'src/components/PageContent/PageContent'
 const DashboardPage = () => {
-  return <SideBarLayout title="Dashboard"></SideBarLayout>
+  return <PageContent metaTitle="Dashboard" />
 }
 
 export default DashboardPage
