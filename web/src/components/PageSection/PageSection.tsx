@@ -8,8 +8,8 @@ type PageSectionProps = {
 
 const PageSection = ({ name, description, children }: PageSectionProps) => {
   return (
-    <VStack alignItems={'start'} spacing={2}>
-      <Box color="#455A64">
+    <VStack w="full" alignItems={'start'} spacing={2}>
+      <Box w="full" color="#455A64">
         {name && <Heading size="sm">{name}</Heading>}
         {description && <Text fontSize="sm">{description}</Text>}
       </Box>

@@ -1,6 +1,6 @@
-import { VStack, FormHelperText, chakra, StyleProps } from '@chakra-ui/react'
-import { Label, FieldError } from '@redwoodjs/forms'
-
+import { VStack, Text, chakra, StyleProps, Box } from '@chakra-ui/react'
+import { Label, FieldError as _FieldError } from '@redwoodjs/forms'
+const FieldError = chakra(_FieldError)
 interface FormControlChild extends StyleProps {
   name: string
 }
@@ -25,12 +25,20 @@ const FormControl = ({
 }: FormControlProps) => {
   //const Children = children && chakra(children)
   return (
-    <VStack align="start" spacing={2}>
-      <_Label name={name}>{label}</_Label>
-      {description && <FormHelperText>{description}</FormHelperText>}
+    <VStack w="full" align="start" spacing={2}>
+      <Box>
+        <_Label fontSize={'sm'} fontWeight="bold" name={name}>
+          {label}
+        </_Label>
+        {description && (
+          <Text fontSize="sm" color="gray.600">
+            {description}
+          </Text>
+        )}
+      </Box>
       {children && children({ name, ...props })}
-      {helperText && <FormHelperText>{helperText}</FormHelperText>}
-      <FieldError name={name} />
+      {helperText && <Text fontSize="sm">{helperText}</Text>}
+      <FieldError fontSize="sm" color="crimson" name={name} />
     </VStack>
   )
 }

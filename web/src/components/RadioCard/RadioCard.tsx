@@ -26,7 +26,7 @@ const RadioCard = ({
         borderWidth="1px"
         background="white"
         borderRadius="md"
-        borderColor="Background"
+        borderColor="background"
         boxShadow="md"
         _checked={{
           color: 'paragraph',

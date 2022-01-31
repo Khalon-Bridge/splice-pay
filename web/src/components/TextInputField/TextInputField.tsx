@@ -1,11 +1,20 @@
-const TextInputField = () => {
+import { chakra } from '@chakra-ui/react'
+import { TextField as _TextField } from '@redwoodjs/forms'
+const TextField = chakra(_TextField)
+
+//interface TextInputFieldProps extends InputFieldProps {
+//}
+
+const TextInputField = (props) => {
   return (
-    <div>
-      <h2>{'TextInputField'}</h2>
-      <p>
-        {'Find me in ./web/src/components/TextInputField/TextInputField.tsx'}
-      </p>
-    </div>
+    <TextField
+      py={2}
+      px={5}
+      borderRadius={'lg'}
+      bgColor={'background'}
+      w="full"
+      {...props}
+    />
   )
 }
 

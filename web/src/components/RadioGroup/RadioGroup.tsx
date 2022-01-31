@@ -34,7 +34,10 @@ const RadioGroup = ({
     <Box as={as} {...group} {...wrapperProps}>
       {options.map(({ value, description, title }) => {
         const radioProps = getRadioProps({ value })
-        return children && children({ ...radioProps, description, title })
+        return (
+          children &&
+          children({ ...radioProps, description, title, ...{ key: value } })
+        )
       })}
     </Box>
   )
