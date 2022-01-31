@@ -1,17 +1,12 @@
+import { Box } from '@chakra-ui/react'
 import SideBarNav from 'src/components/SideBarNav/SideBarNav'
-import BaseLayout, { BaseLayoutProps } from '../BaseLayout'
+import BaseLayout from '../BaseLayout'
 
-interface SideBarLayoutProps extends BaseLayoutProps {}
-
-const SideBarLayout = ({
-  children,
-  title,
-  description,
-}: SideBarLayoutProps) => {
+const SideBarLayout: React.FC = ({ children }) => {
   return (
-    <BaseLayout description={description} title={title}>
+    <BaseLayout>
       <SideBarNav />
-      {children}
+      <Box ml={[0, 0, '218px']}>{children}</Box>
     </BaseLayout>
   )
 }

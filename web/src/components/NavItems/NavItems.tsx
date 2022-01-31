@@ -8,7 +8,7 @@ import { routes } from '@redwoodjs/router'
 const NavItems = () => {
   return (
     <Box>
-      <NavItem to={routes.home()} icon={MdDashboard}>
+      <NavItem to={routes.dashboard()} icon={MdDashboard}>
         <Text>Dashboard</Text>
       </NavItem>
       <NavItem to={routes.invoiceList()} icon={FaFileInvoiceDollar}>

@@ -1,5 +1,5 @@
 import { Box, StyleProps } from '@chakra-ui/react'
-import { Logo } from 'src/utils/svgs/logo'
+import Logo from 'src/components/Logo/Logo'
 import NavItems from '../NavItems/NavItems'
 const SideBarNav = (props: StyleProps) => (
   <Box

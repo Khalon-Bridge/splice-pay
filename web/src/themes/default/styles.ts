@@ -13,7 +13,7 @@ export default {
     a: {
       color: 'accent',
       _hover: {
-        textDecoration: 'underline',
+        //textDecoration: 'underline',
       },
     },
   },

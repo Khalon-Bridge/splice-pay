@@ -5,7 +5,7 @@ import SideBarLayout from './SideBarLayout'
 describe('SideBarLayout', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<SideBarLayout title="title" />)
+      render(<SideBarLayout />)
     }).not.toThrow()
   })
 })
