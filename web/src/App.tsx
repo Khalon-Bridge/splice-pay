@@ -11,14 +11,14 @@ const client = init(process.env.MORALIS_SERVER_URL, process.env.MORALIS_API_ID)
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-      <ColorModeScript />
-      <ChakraProvider theme={theme}>
-        <RedwoodApolloProvider>
-          <AuthProvider client={client} type="custom">
+      <AuthProvider client={client} type="custom">
+        <ColorModeScript />
+        <ChakraProvider theme={theme}>
+          <RedwoodApolloProvider>
             <Routes />
-          </AuthProvider>
-        </RedwoodApolloProvider>
-      </ChakraProvider>
+          </RedwoodApolloProvider>
+        </ChakraProvider>
+      </AuthProvider>
     </RedwoodProvider>
   </FatalErrorBoundary>
 )

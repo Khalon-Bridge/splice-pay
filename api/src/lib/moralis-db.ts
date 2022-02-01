@@ -39,7 +39,7 @@ const create = async (
     JSON.parse(JSON.stringify(payload)),
     options
   )
-  return saved.attributes
+  return { id: saved.id, ...saved.attributes }
 }
 
 const update = async (
@@ -55,7 +55,7 @@ const update = async (
       JSON.parse(JSON.stringify(payload)),
       options
     )
-    return updated.attributes
+    return { id: updated.id, ...updated.attributes }
   }
   throw new Error('Item does not exist!')
 }

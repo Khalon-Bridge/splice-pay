@@ -1,6 +1,7 @@
-import { AuthenticationError } from '@redwoodjs/graphql-server'
+import { AuthenticationError, context } from '@redwoodjs/graphql-server'
 import Moralis from 'moralis/node'
 import { initMoralis } from './utils'
+
 /**
  * Once you are ready to add authentication to your application
  * you'll build out requireAuth() with real functionality. For
@@ -11,7 +12,8 @@ import { initMoralis } from './utils'
  * See https://redwoodjs.com/docs/authentication for more info.
  */
 export const isAuthenticated = () => {
-  return context.currentUser
+  //console.log(context)
+  return !!context.currentUser
 }
 
 export const hasRole = ({ roles }) => {
@@ -19,17 +21,18 @@ export const hasRole = ({ roles }) => {
 }
 
 export const getCurrentUser = async (_decoded, { token }) => {
-  try {
-    await initMoralis()
-    const query = new Moralis.Query(Moralis.Session)
-    query.equalTo('sessionToken', token)
-    query.include('user')
-    const session = await query.first({ useMasterKey: true })
-    console.log(await session.get('user'))
-    return await session.get('user')
-  } catch (e) {
+  // try {
+  await initMoralis()
+  const query = new Moralis.Query(Moralis.Session)
+  query.equalTo('sessionToken', token)
+  query.include('user')
+  const session = await query.first({ useMasterKey: true })
+  //console.log(await session.get('user'))
+  return await session.get('user')
+  //return { id: 'e45669950', userName: 'rollypolly', roles: [] }
+  /*   } catch (e) {
     throw new AuthenticationError(e)
-  }
+  } */
 }
 
 // This is used by the redwood directive

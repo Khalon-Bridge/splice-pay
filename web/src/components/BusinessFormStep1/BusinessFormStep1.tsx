@@ -38,8 +38,8 @@ const BusinessFormStep1 = () => {
                 placeholder="What do you sell?"
                 {...props}
               >
-                <option>Service</option>
-                <option>Product</option>
+                <option value="SERVICE">Service</option>
+                <option value="PRODUCT">Product</option>
               </SelectField>
             )}
           </FormControl>
