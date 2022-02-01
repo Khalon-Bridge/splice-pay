@@ -1,5 +1,6 @@
 import create from 'zustand'
 import { produce } from 'immer'
+import { merge } from 'lodash'
 
 type formInput = {
   name?: string
@@ -18,7 +19,7 @@ export const useStore = create<TStore>((set) => ({
   save: (data) => {
     set(
       produce((draft) => {
-        draft.input = { ...draft.Input, ...data }
+        draft.input = merge(draft.Input, data)
       })
     )
   },
