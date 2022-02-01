@@ -27,7 +27,7 @@ export const schema = gql`
   input CreateBusinessInput {
     name: String!
     type: BusinessType!
-    status: Status!
+    status: Status
     wallet: String!
     information: JSON
     settings: JSON

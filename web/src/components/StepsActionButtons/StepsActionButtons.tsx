@@ -1,8 +1,13 @@
 import { HStack, Button } from '@chakra-ui/react'
 import { Submit as _Submit } from '@redwoodjs/forms'
-import { UseStepsProps } from '../BusinessFormProvider/BusinessFormProvider'
 
-const StepsActionButtons = ({ prevStep, activeStep }: UseStepsProps) => {
+const StepsActionButtons = ({
+  prevStep,
+  activeStep,
+}: {
+  prevStep?: () => void
+  activeStep?: number
+}) => {
   return (
     <HStack w="full" justify="space-between">
       {activeStep > 0 && (

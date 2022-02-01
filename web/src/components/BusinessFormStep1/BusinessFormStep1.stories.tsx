@@ -1,9 +1,7 @@
 import BusinessFormStep1 from './BusinessFormStep1'
-import BusinessFormProvider from '../BusinessFormProvider/BusinessFormProvider'
+import { Form } from '@redwoodjs/forms'
 export const generated = () => {
-  return (
-    <BusinessFormProvider>{() => <BusinessFormStep1 />}</BusinessFormProvider>
-  )
+  return <Form>{() => <BusinessFormStep1 />}</Form>
 }
 
 export default { title: 'Components/BusinessFormStep1' }
